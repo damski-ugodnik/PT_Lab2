@@ -29,50 +29,50 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Values = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cBox = new System.Windows.Forms.TextBox();
             this.bBox = new System.Windows.Forms.TextBox();
             this.aBox = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Controls = new System.Windows.Forms.GroupBox();
             this.descriptionBox = new System.Windows.Forms.RichTextBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.processButton = new System.Windows.Forms.Button();
             this.mode3 = new System.Windows.Forms.RadioButton();
             this.mode2 = new System.Windows.Forms.RadioButton();
             this.mode1 = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Result = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.x2Box = new System.Windows.Forms.TextBox();
             this.x1Box = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gotoCubicEq = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.Values.SuspendLayout();
+            this.Controls.SuspendLayout();
+            this.Result.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // Values
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cBox);
-            this.groupBox1.Controls.Add(this.bBox);
-            this.groupBox1.Controls.Add(this.aBox);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(11, 12);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(178, 167);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Values";
+            this.Values.Controls.Add(this.label3);
+            this.Values.Controls.Add(this.label2);
+            this.Values.Controls.Add(this.label1);
+            this.Values.Controls.Add(this.cBox);
+            this.Values.Controls.Add(this.bBox);
+            this.Values.Controls.Add(this.aBox);
+            this.Values.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Values.Location = new System.Drawing.Point(11, 12);
+            this.Values.Margin = new System.Windows.Forms.Padding(4);
+            this.Values.Name = "Values";
+            this.Values.Padding = new System.Windows.Forms.Padding(4);
+            this.Values.Size = new System.Drawing.Size(178, 167);
+            this.Values.TabIndex = 0;
+            this.Values.TabStop = false;
+            this.Values.Text = "Values";
             // 
             // label3
             // 
@@ -134,23 +134,23 @@
             this.aBox.TextChanged += new System.EventHandler(this.aBox_TextChanged);
             this.aBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.aBox_KeyPress);
             // 
-            // groupBox2
+            // Controls
             // 
-            this.groupBox2.Controls.Add(this.descriptionBox);
-            this.groupBox2.Controls.Add(this.clearButton);
-            this.groupBox2.Controls.Add(this.processButton);
-            this.groupBox2.Controls.Add(this.mode3);
-            this.groupBox2.Controls.Add(this.mode2);
-            this.groupBox2.Controls.Add(this.mode1);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(11, 199);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(500, 158);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Controls";
+            this.Controls.Controls.Add(this.descriptionBox);
+            this.Controls.Controls.Add(this.clearButton);
+            this.Controls.Controls.Add(this.processButton);
+            this.Controls.Controls.Add(this.mode3);
+            this.Controls.Controls.Add(this.mode2);
+            this.Controls.Controls.Add(this.mode1);
+            this.Controls.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Controls.Location = new System.Drawing.Point(11, 199);
+            this.Controls.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Name = "Controls";
+            this.Controls.Padding = new System.Windows.Forms.Padding(4);
+            this.Controls.Size = new System.Drawing.Size(500, 158);
+            this.Controls.TabIndex = 0;
+            this.Controls.TabStop = false;
+            this.Controls.Text = "Controls";
             // 
             // descriptionBox
             // 
@@ -217,21 +217,21 @@
             this.mode1.Text = "Mode 1";
             this.mode1.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // Result
             // 
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.x2Box);
-            this.groupBox3.Controls.Add(this.x1Box);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(218, 12);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(293, 167);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Result";
+            this.Result.Controls.Add(this.label5);
+            this.Result.Controls.Add(this.label4);
+            this.Result.Controls.Add(this.x2Box);
+            this.Result.Controls.Add(this.x1Box);
+            this.Result.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Result.Location = new System.Drawing.Point(218, 13);
+            this.Result.Margin = new System.Windows.Forms.Padding(4);
+            this.Result.Name = "Result";
+            this.Result.Padding = new System.Windows.Forms.Padding(4);
+            this.Result.Size = new System.Drawing.Size(293, 167);
+            this.Result.TabIndex = 0;
+            this.Result.TabStop = false;
+            this.Result.Text = "Result";
             // 
             // label5
             // 
@@ -287,19 +287,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 449);
             this.Controls.Add(this.gotoCubicEq);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Controls);
+            this.Controls.Add(this.Result);
+            this.Controls.Add(this.Values);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SquareEq";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.Values.ResumeLayout(false);
+            this.Values.PerformLayout();
+            this.Controls.ResumeLayout(false);
+            this.Controls.PerformLayout();
+            this.Result.ResumeLayout(false);
+            this.Result.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -307,20 +307,20 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox Values;
         private Label label3;
         private Label label2;
         private Label label1;
         private TextBox cBox;
         private TextBox bBox;
         private TextBox aBox;
-        private GroupBox groupBox2;
+        private GroupBox Controls;
         private Button clearButton;
         private Button processButton;
         private RadioButton mode3;
         private RadioButton mode2;
         private RadioButton mode1;
-        private GroupBox groupBox3;
+        private GroupBox Result;
         private Label label5;
         private Label label4;
         private TextBox x2Box;

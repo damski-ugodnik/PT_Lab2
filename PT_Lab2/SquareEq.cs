@@ -15,7 +15,7 @@ namespace PT_Lab2
             mode1.Checked = true;
         }
 
-        internal void aBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void aBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             string s = ((TextBox)sender).Text;
             if ((e.KeyChar == '-' || e.KeyChar == ',' || Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back) && s.Length < 10)
