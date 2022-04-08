@@ -2,8 +2,6 @@ namespace PT_Lab2
 {
     public partial class SquareEq : Form
     {
-        #region variables 
-        #endregion
 
         public SquareEq()
         {

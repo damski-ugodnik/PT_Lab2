@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.Values = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.dBox = new System.Windows.Forms.TextBox();
             this.cBox = new System.Windows.Forms.TextBox();
             this.aBox = new System.Windows.Forms.TextBox();
             this.bBox = new System.Windows.Forms.TextBox();
             this.gotoSquareEq = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Controls = new System.Windows.Forms.GroupBox();
             this.descriptionBox = new System.Windows.Forms.RichTextBox();
             this.clearButton = new System.Windows.Forms.Button();
@@ -46,12 +46,12 @@
             this.mode2 = new System.Windows.Forms.RadioButton();
             this.mode1 = new System.Windows.Forms.RadioButton();
             this.Result = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.x2Box = new System.Windows.Forms.TextBox();
             this.x1Box = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.Values.SuspendLayout();
             this.Controls.SuspendLayout();
             this.Result.SuspendLayout();
@@ -74,32 +74,68 @@
             this.Values.TabStop = false;
             this.Values.Text = "Values";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "a = ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "b = ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "c = ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 15);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "d = ";
+            // 
             // dBox
             // 
             this.dBox.Location = new System.Drawing.Point(63, 144);
             this.dBox.Name = "dBox";
-            this.dBox.Size = new System.Drawing.Size(100, 25);
+            this.dBox.Size = new System.Drawing.Size(100, 23);
             this.dBox.TabIndex = 5;
             // 
             // cBox
             // 
             this.cBox.Location = new System.Drawing.Point(63, 113);
             this.cBox.Name = "cBox";
-            this.cBox.Size = new System.Drawing.Size(100, 25);
+            this.cBox.Size = new System.Drawing.Size(100, 23);
             this.cBox.TabIndex = 2;
             // 
             // aBox
             // 
             this.aBox.Location = new System.Drawing.Point(63, 51);
             this.aBox.Name = "aBox";
-            this.aBox.Size = new System.Drawing.Size(100, 25);
+            this.aBox.Size = new System.Drawing.Size(100, 23);
             this.aBox.TabIndex = 3;
             // 
             // bBox
             // 
             this.bBox.Location = new System.Drawing.Point(63, 82);
             this.bBox.Name = "bBox";
-            this.bBox.Size = new System.Drawing.Size(100, 25);
+            this.bBox.Size = new System.Drawing.Size(100, 23);
             this.bBox.TabIndex = 4;
             // 
             // gotoSquareEq
@@ -110,42 +146,6 @@
             this.gotoSquareEq.TabIndex = 1;
             this.gotoSquareEq.Text = "Switch to Square Equation";
             this.gotoSquareEq.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "a = ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "b = ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "c = ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 147);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "d = ";
             // 
             // Controls
             // 
@@ -246,6 +246,22 @@
             this.Result.TabStop = false;
             this.Result.Text = "Result";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 17);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "x3 = ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(56, 114);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 25);
+            this.textBox1.TabIndex = 5;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -278,32 +294,15 @@
             this.x1Box.Size = new System.Drawing.Size(100, 25);
             this.x1Box.TabIndex = 2;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(56, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 117);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "x3 = ";
-            // 
             // CubicEq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 510);
-
-
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "CubicEq";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.CubicEq_Load);
             this.Values.ResumeLayout(false);
             this.Values.PerformLayout();
             this.Controls.ResumeLayout(false);

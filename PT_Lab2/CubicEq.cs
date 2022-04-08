@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void CubicEq_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
