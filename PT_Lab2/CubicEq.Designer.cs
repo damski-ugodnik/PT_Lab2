@@ -299,10 +299,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 510);
-            this.Controls.Add(this.Result);
-            this.Controls.Add(this.Controls);
-            this.Controls.Add(this.gotoSquareEq);
-            this.Controls.Add(this.Values);
+
+
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "CubicEq";
             this.Text = "Form1";
