@@ -109,6 +109,7 @@
             this.cBox.Location = new System.Drawing.Point(57, 116);
             this.cBox.Margin = new System.Windows.Forms.Padding(4);
             this.cBox.Name = "cBox";
+            this.cBox.ShortcutsEnabled = false;
             this.cBox.Size = new System.Drawing.Size(99, 25);
             this.cBox.TabIndex = 0;
             this.cBox.TextChanged += new System.EventHandler(this.aBox_TextChanged);
@@ -119,6 +120,7 @@
             this.bBox.Location = new System.Drawing.Point(57, 79);
             this.bBox.Margin = new System.Windows.Forms.Padding(4);
             this.bBox.Name = "bBox";
+            this.bBox.ShortcutsEnabled = false;
             this.bBox.Size = new System.Drawing.Size(99, 25);
             this.bBox.TabIndex = 1;
             this.bBox.TextChanged += new System.EventHandler(this.aBox_TextChanged);
@@ -129,6 +131,7 @@
             this.aBox.Location = new System.Drawing.Point(57, 40);
             this.aBox.Margin = new System.Windows.Forms.Padding(4);
             this.aBox.Name = "aBox";
+            this.aBox.ShortcutsEnabled = false;
             this.aBox.Size = new System.Drawing.Size(99, 25);
             this.aBox.TabIndex = 2;
             this.aBox.TextChanged += new System.EventHandler(this.aBox_TextChanged);
@@ -154,9 +157,9 @@
             // 
             // descriptionBox
             // 
-            this.descriptionBox.Enabled = false;
             this.descriptionBox.Location = new System.Drawing.Point(278, 25);
             this.descriptionBox.Name = "descriptionBox";
+            this.descriptionBox.ReadOnly = true;
             this.descriptionBox.Size = new System.Drawing.Size(173, 114);
             this.descriptionBox.TabIndex = 3;
             this.descriptionBox.Text = "";
@@ -169,6 +172,7 @@
             this.clearButton.TabIndex = 0;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // processButton
             // 
@@ -204,6 +208,7 @@
             this.mode2.TabStop = true;
             this.mode2.Text = "Mode 2";
             this.mode2.UseVisualStyleBackColor = true;
+            this.mode2.CheckedChanged += new System.EventHandler(this.mode2_CheckedChanged);
             // 
             // mode1
             // 
@@ -216,6 +221,7 @@
             this.mode1.TabStop = true;
             this.mode1.Text = "Mode 1";
             this.mode1.UseVisualStyleBackColor = true;
+            this.mode1.CheckedChanged += new System.EventHandler(this.mode1_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -255,6 +261,7 @@
             // 
             this.x2Box.Location = new System.Drawing.Point(56, 78);
             this.x2Box.Name = "x2Box";
+            this.x2Box.ShortcutsEnabled = false;
             this.x2Box.Size = new System.Drawing.Size(100, 25);
             this.x2Box.TabIndex = 1;
             this.x2Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.x1Box_KeyPress);
@@ -263,6 +270,7 @@
             // 
             this.x1Box.Location = new System.Drawing.Point(56, 40);
             this.x1Box.Name = "x1Box";
+            this.x1Box.ShortcutsEnabled = false;
             this.x1Box.Size = new System.Drawing.Size(100, 25);
             this.x1Box.TabIndex = 2;
             this.x1Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.x1Box_KeyPress);
@@ -292,7 +300,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SquareEq";
-            this.Text = "Form1";
+            this.Text = "Square Equation Solution";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

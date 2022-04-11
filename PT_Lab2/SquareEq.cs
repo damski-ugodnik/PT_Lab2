@@ -16,18 +16,36 @@ namespace PT_Lab2
         private void aBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             string s = ((TextBox)sender).Text;
-            if ((e.KeyChar == '-' || e.KeyChar == ',' || Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back) && s.Length < 10)
+            if (char.IsDigit(e.KeyChar))
+            {
+                if (double.Parse(s + e.KeyChar) > 100000)
+                {
+                    e.KeyChar = (char)Keys.None;
+                    return;
+                }
+            }
+            if ((e.KeyChar == '-' || e.KeyChar == ',' || Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Left || e.KeyChar == (char)Keys.Right) && s.Length < 10)
             {
                 if (s.Length != 0 && e.KeyChar == '-')
                     e.KeyChar = (char)Keys.None;
                 if ((s.Length == 0 || s.Contains(',')) && e.KeyChar == ',')
                     e.KeyChar = (char)Keys.None;
             }
+            else if (e.KeyChar == (char)Keys.Back)
+            {
+                ;
+            }
             else e.KeyChar = (char)Keys.None;
         }
 
         private void processButton_Click(object sender, EventArgs e)
         {
+            x1Box.Text = x2Box.Text = "";
+            if (aBox.Text.Length == 0 || bBox.Text.Length == 0 || cBox.Text.Length == 0)
+            {
+                errorProvider1.SetError(groupBox1, "Empty Field(-s)");
+                return;
+            }
             errorProvider1.Clear();
             double a = double.Parse(aBox.Text);
             double b = double.Parse(bBox.Text);
@@ -35,6 +53,11 @@ namespace PT_Lab2
             if (mode1.Checked)
             {
                 double discriminant = b * b - 4 * a * c;
+                if (a == 0)
+                {
+                    errorProvider1.SetError(processButton, "Not a square equation: A should not be zero");
+                    return;
+                }
                 if (discriminant < 0)
                 {
                     errorProvider1.SetError(processButton, "Equation does not have a solution:\n" +
@@ -82,15 +105,12 @@ namespace PT_Lab2
             e.KeyChar = (char)(Keys.None);
         }
 
-        private void mode3_CheckedChanged(object sender, EventArgs e)
-        {
-            descriptionBox.Text = "Mode 3:\n" +
-                "Creates a new class instance, which represents square equation: " +
-                "has 3 coefficients and 2 roots, they are read-only and are assigned in constructor";
-        }
-
         private double[] Solution(double a, double b, double c)
         {
+            if (a == 0)
+            {
+                throw new Exception("Not a square equation: A should not be zero");
+            }
             double discriminant = b * b - 4 * a * c;
             if (discriminant < 0)
             {
@@ -109,6 +129,33 @@ namespace PT_Lab2
             frm.StartPosition = FormStartPosition.Manual;
             frm.Show();
             this.Hide();
+        }
+
+        private void mode1_CheckedChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            descriptionBox.Text = "Mode 1:\n" +
+                "Processing happens in the form class event handler";
+        }
+
+        private void mode2_CheckedChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            descriptionBox.Text = "Mode 2:\n" +
+                            "Processing happens in the form class method";
+        }
+
+        private void mode3_CheckedChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            descriptionBox.Text = "Mode 3:\n" +
+                "Creates a new class instance, which represents square equation: " +
+                "has 3 coefficients and 2 roots, they are read-only and are assigned in constructor";
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            aBox.Text = bBox.Text = cBox.Text = x1Box.Text = x2Box.Text = "";
         }
     }
 }
