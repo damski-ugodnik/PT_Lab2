@@ -262,7 +262,7 @@
             this.x2Box.Location = new System.Drawing.Point(56, 78);
             this.x2Box.Name = "x2Box";
             this.x2Box.ShortcutsEnabled = false;
-            this.x2Box.Size = new System.Drawing.Size(100, 25);
+            this.x2Box.Size = new System.Drawing.Size(188, 25);
             this.x2Box.TabIndex = 1;
             this.x2Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.x1Box_KeyPress);
             // 
@@ -271,7 +271,7 @@
             this.x1Box.Location = new System.Drawing.Point(56, 40);
             this.x1Box.Name = "x1Box";
             this.x1Box.ShortcutsEnabled = false;
-            this.x1Box.Size = new System.Drawing.Size(100, 25);
+            this.x1Box.Size = new System.Drawing.Size(188, 25);
             this.x1Box.TabIndex = 2;
             this.x1Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.x1Box_KeyPress);
             // 

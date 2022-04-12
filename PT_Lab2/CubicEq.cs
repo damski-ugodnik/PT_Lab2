@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Numerics;
+﻿using System.Numerics;
 
 namespace PT_Lab2
 {
@@ -49,6 +40,7 @@ namespace PT_Lab2
 
         private void mode1_CheckedChanged(object sender, EventArgs e)
         {
+            x1Box.Text = x2Box.Text = "";
             errorProvider1.Clear();
             descriptionBox.Text = "Mode 1:\n" +
                 "Processing happens in the form class event handler";
@@ -56,6 +48,7 @@ namespace PT_Lab2
 
         private void mode2_CheckedChanged(object sender, EventArgs e)
         {
+            x1Box.Text = x2Box.Text = "";
             errorProvider1.Clear();
             descriptionBox.Text = "Mode 2:\n" +
                             "Processing happens in the form class method";
@@ -63,6 +56,7 @@ namespace PT_Lab2
 
         private void mode3_CheckedChanged(object sender, EventArgs e)
         {
+            x1Box.Text = x2Box.Text = "";
             errorProvider1.Clear();
             descriptionBox.Text = "Mode 3:\n" +
                 "Creates a new class instance, which represents square equation";
@@ -81,10 +75,18 @@ namespace PT_Lab2
             }
             if (e.KeyChar == '-' || e.KeyChar == ',' || Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Left || e.KeyChar == (char)Keys.Right)
             {
-                if (s.Length != 0 && e.KeyChar == '-')
+                if (((TextBox)sender).SelectionStart != 0 && e.KeyChar == '-')
                     e.KeyChar = (char)Keys.None;
-                if ((s.Length == 0 || s.Contains(',')) && e.KeyChar == ',')
+                if (e.KeyChar == ',')
+                {
+                    if(s.Length==0)
                     e.KeyChar = (char)Keys.None;
+                    if (s.Length > 0)
+                    {
+                        if (!char.IsDigit(s[s.Length - 1]) || double.Parse(s + e.KeyChar) >= 100000)
+                            e.KeyChar = (char)Keys.None;
+                    }
+                }
             }
             else if (e.KeyChar == (char)Keys.Back)
             {
@@ -95,6 +97,7 @@ namespace PT_Lab2
 
         private void processButton_Click(object sender, EventArgs e)
         {
+
             x1Box.Text = x2Box.Text = x3Box.Text = "";
             if (aBox.Text.Length == 0 || bBox.Text.Length == 0 || cBox.Text.Length == 0 || dBox.Text.Length == 0)
             {
@@ -108,22 +111,22 @@ namespace PT_Lab2
             double d = double.Parse(dBox.Text);
             if (mode1.Checked)
             {
-                double x1 = default, x2r, x3r, Q, R, S;
+                double x1 = default, A, B, C, x2r, x3r, Q, R, S;
                 Complex x2c = default, x3c = default;
                 if (a == 0)
                 {
                     errorProvider1.SetError(aBox,"Error: not cubic equation - A should not be zero");
                 }
-                a = b / a; b = c / a; c = d / a; //приведение коэффициентов 
-                Q = (Math.Pow(a, 2) - (3 * b)) / 9;
-                R = (2 * Math.Pow(a, 3) - 9 * a * b + 27 * c) / 54;
+                A = b / a; B = c / a; C = d / a; //приведение коэффициентов 
+                Q = (Math.Pow(A, 2) - (3 * B)) / 9;
+                R = (2 * Math.Pow(A, 3) - 9 * A * B + 27 * C) / 54;
                 S = Math.Pow(Q, 3) - Math.Pow(R, 2);
                 if (S > 0)
                 {
                     double fi = Math.Acos(R / Math.Sqrt(-Math.Pow(Q, 3))) / 3;
-                    x1 = 2 * Math.Sqrt(-Q) * Math.Cos(fi) - a / 3;
-                    x2r = 2 * Math.Sqrt(-Q) * Math.Cos(fi + (2 * Math.PI) / 3) - a / 3;
-                    x3r = 2 * Math.Sqrt(-Q) * Math.Cos(fi - (2 * Math.PI) / 3) - a / 3;
+                    x1 = 2 * Math.Sqrt(-Q) * Math.Cos(fi) - A / 3;
+                    x2r = 2 * Math.Sqrt(-Q) * Math.Cos(fi + (2 * Math.PI) / 3) - A / 3;
+                    x3r = 2 * Math.Sqrt(-Q) * Math.Cos(fi - (2 * Math.PI) / 3) - A / 3;
                     x1Box.Text = x1.ToString("0.000;-0.000;0");
                     x2Box.Text = x2r.ToString("0.000;-0.000;0");
                     x3Box.Text = x3r.ToString("0.000;-0.000;0");
@@ -134,22 +137,22 @@ namespace PT_Lab2
                     {
 
                         var fi = Math.Acosh(Math.Abs(R) / Math.Sqrt(Math.Pow(Q, 3))) / 3;
-                        x1 = -2 * Math.Sign(R) * Math.Sqrt(Q) * Math.Cosh(fi) - a / 3;
-                        x2c = Math.Sign(R) * Math.Sqrt(Q) * Math.Cosh(fi) - a / 3 + Complex.ImaginaryOne * Math.Sqrt(3) * Math.Sqrt(Q) * Math.Sinh(fi);
-                        x3c = Math.Sign(R) * Math.Sqrt(Q) * Math.Cosh(fi) - a / 3 - Complex.ImaginaryOne * Math.Sqrt(3) * Math.Sqrt(Q) * Math.Sinh(fi);
+                        x1 = -2 * Math.Sign(R) * Math.Sqrt(Q) * Math.Cosh(fi) - A / 3;
+                        x2c = Math.Sign(R) * Math.Sqrt(Q) * Math.Cosh(fi) - A / 3 + Complex.ImaginaryOne * Math.Sqrt(3) * Math.Sqrt(Q) * Math.Sinh(fi);
+                        x3c = Math.Sign(R) * Math.Sqrt(Q) * Math.Cosh(fi) - A / 3 - Complex.ImaginaryOne * Math.Sqrt(3) * Math.Sqrt(Q) * Math.Sinh(fi);
                     }
                     if (Q < 0)
                     {
                         var fi = Math.Asinh(Math.Abs(R) / Math.Sqrt(Math.Pow(Math.Abs(Q), 3))) / 3;
-                        x1 = -2 * Math.Sign(R) * Math.Sqrt(Math.Abs(Q)) * Math.Sinh(fi) - a / 3;
-                        x2c = Math.Sign(R) * Math.Sqrt(Math.Abs(Q)) * Math.Sinh(fi) - a / 3 + Complex.ImaginaryOne * Math.Sqrt(3 * Math.Abs(Q)) * Math.Cosh(fi);
-                        x3c = Math.Sign(R) * Math.Sqrt(Math.Abs(Q)) * Math.Sinh(fi) - a / 3 - Complex.ImaginaryOne * Math.Sqrt(3 * Math.Abs(Q)) * Math.Cosh(fi);
+                        x1 = -2 * Math.Sign(R) * Math.Sqrt(Math.Abs(Q)) * Math.Sinh(fi) - A / 3;
+                        x2c = Math.Sign(R) * Math.Sqrt(Math.Abs(Q)) * Math.Sinh(fi) - A / 3 + Complex.ImaginaryOne * Math.Sqrt(3 * Math.Abs(Q)) * Math.Cosh(fi);
+                        x3c = Math.Sign(R) * Math.Sqrt(Math.Abs(Q)) * Math.Sinh(fi) - A / 3 - Complex.ImaginaryOne * Math.Sqrt(3 * Math.Abs(Q)) * Math.Cosh(fi);
                     }
                     if (Q == 0)
                     {
-                        x1 = -Math.Cbrt(c - Math.Pow(a, 3) / 27) - a / 3;
-                        x2c = -((a + x1) / 2) + (Complex.ImaginaryOne / 2) * Math.Sqrt(Math.Abs(((a - 3 * x1) * (a + x1)) - 4 * b));
-                        x3c = -((a + x1) / 2) - (Complex.ImaginaryOne / 2) * Math.Sqrt(Math.Abs(((a - 3 * x1) * (a + x1)) - 4 * b));
+                        x1 = -Math.Cbrt(C - Math.Pow(A, 3) / 27) - A / 3;
+                        x2c = -((A + x1) / 2) + (Complex.ImaginaryOne / 2) * Math.Sqrt(Math.Abs(((A - 3 * x1) * (A + x1)) - 4 * B));
+                        x3c = -((A + x1) / 2) - (Complex.ImaginaryOne / 2) * Math.Sqrt(Math.Abs(((A - 3 * x1) * (A + x1)) - 4 * B));
                     }
                     x1Box.Text = x1.ToString("0.000;-0.000;0");
                     x2Box.Text = x2c.Real.ToString("0.000") + " " + x2c.Imaginary.ToString("+ 0.000;- 0.000") + "i";
@@ -157,13 +160,13 @@ namespace PT_Lab2
                 }
                 else if (S == 0)
                 {
-                    x1 = -2 * Math.Cbrt(R) - a / 3;
-                    x2r = Math.Cbrt(R) - a / 3;
+                    x1 = -2 * Math.Cbrt(R) - A / 3;
+                    x2r = Math.Cbrt(R) - A / 3;
                     x1Box.Text = x1.ToString("0.000;-0.000;0");
                     x2Box.Text = x2r.ToString("0.000;-0.000;0");
                     x3Box.Text = "NO VALUE: DEGENERATE EQUATION";
                 }
-                else errorProvider1.SetError(groupBox1, "Not existent equation");
+                else errorProvider1.SetError(groupBox1,"Not existent equation");
             }
             if (mode2.Checked)
             {

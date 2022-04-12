@@ -24,12 +24,20 @@ namespace PT_Lab2
                     return;
                 }
             }
-            if ((e.KeyChar == '-' || e.KeyChar == ',' || Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Left || e.KeyChar == (char)Keys.Right) && s.Length < 10)
+            if (e.KeyChar == '-' || e.KeyChar == ',' || Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Left || e.KeyChar == (char)Keys.Right)
             {
-                if (s.Length != 0 && e.KeyChar == '-')
+                if (((TextBox)sender).SelectionStart != 0 && e.KeyChar == '-')
                     e.KeyChar = (char)Keys.None;
-                if ((s.Length == 0 || s.Contains(',')) && e.KeyChar == ',')
-                    e.KeyChar = (char)Keys.None;
+                if (e.KeyChar == ',')
+                {
+                    if (s.Length == 0)
+                        e.KeyChar = (char)Keys.None;
+                    if (s.Length > 0)
+                    {
+                        if (!char.IsDigit(s[s.Length - 1]) || double.Parse(s + e.KeyChar) >= 100000)
+                            e.KeyChar = (char)Keys.None;
+                    }
+                }
             }
             else if (e.KeyChar == (char)Keys.Back)
             {
@@ -133,6 +141,7 @@ namespace PT_Lab2
 
         private void mode1_CheckedChanged(object sender, EventArgs e)
         {
+            x1Box.Text = x2Box.Text = "";
             errorProvider1.Clear();
             descriptionBox.Text = "Mode 1:\n" +
                 "Processing happens in the form class event handler";
@@ -140,6 +149,7 @@ namespace PT_Lab2
 
         private void mode2_CheckedChanged(object sender, EventArgs e)
         {
+            x1Box.Text = x2Box.Text = "";
             errorProvider1.Clear();
             descriptionBox.Text = "Mode 2:\n" +
                             "Processing happens in the form class method";
@@ -147,6 +157,7 @@ namespace PT_Lab2
 
         private void mode3_CheckedChanged(object sender, EventArgs e)
         {
+            x1Box.Text = x2Box.Text = "";
             errorProvider1.Clear();
             descriptionBox.Text = "Mode 3:\n" +
                 "Creates a new class instance, which represents square equation: " +

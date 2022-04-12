@@ -12,6 +12,7 @@ namespace PT_Lab2
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new SquareEq());
+            Application.Exit();
         }
     }
 }
