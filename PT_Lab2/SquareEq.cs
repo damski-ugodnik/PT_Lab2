@@ -2,6 +2,7 @@ namespace PT_Lab2
 {
     public partial class SquareEq : Form
     {
+        private bool formSwitching = false;
 
         public SquareEq()
         {
@@ -136,7 +137,8 @@ namespace PT_Lab2
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.Manual;
             frm.Show();
-            this.Hide();
+            formSwitching = true;
+            this.Close();
         }
 
         private void mode1_CheckedChanged(object sender, EventArgs e)
@@ -167,6 +169,12 @@ namespace PT_Lab2
         private void clearButton_Click(object sender, EventArgs e)
         {
             aBox.Text = bBox.Text = cBox.Text = x1Box.Text = x2Box.Text = "";
+        }
+
+        private void SquareEq_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!formSwitching)
+                Singleton.StartForm.Show();
         }
     }
 }
