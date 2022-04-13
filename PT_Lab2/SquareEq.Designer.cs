@@ -301,6 +301,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SquareEq";
             this.Text = "Square Equation Solution";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SquareEq_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

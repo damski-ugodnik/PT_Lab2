@@ -4,23 +4,42 @@ namespace PT_Lab2
 {
     public partial class CubicEq : Form
     {
+        private bool formSwitching = false;
+        /// <summary>
+        /// Конструктор класса формы
+        /// </summary>
         public CubicEq()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Обработчик события закрытия формы
+        /// Поскольку приложение запускается через другую форму,
+        /// а в данную форму переключение происходит по кнопке в основной форме, 
+        /// то необходимо закрывать само приложение в обработчике, иначе приложение будет работать 
+        /// в фоне и запуск приложения повторно будет невоможен без завершения процесса
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CubicEq_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!formSwitching)
+                Singleton.StartForm.Show();
         }
-
+        /// <summary>
+        /// Обработчик события нажатия кнопки перехода к квадратному уравнению
+        /// происходит переход в другую форму: сворачивание данной формы и открытие другой
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gotoSquareEq_Click(object sender, EventArgs e)
         {
             Form frm = new SquareEq();
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.Manual;
             frm.Show();
-            this.Hide();
+            formSwitching = true;
+            this.Close();
         }
 
         private void CubicEq_Load(object sender, EventArgs e)
