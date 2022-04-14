@@ -1,26 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PT_Lab2
+﻿namespace PT_Lab2
 {
+    /// <summary>
+    /// класс-одиночка, который запускает программу, невозможно создать екземпляр вручную, невозможно наследование
+    /// </summary>
     internal sealed class Singleton
     {
-        private static StartForm? startForm;
+        private static StartForm? startForm;// статическая переменная начальной формы, т.е в одной сессии может быть только один экземпляр этого класса
+
+        /// <summary>
+        /// Приватный конструктор класса Singleton - закрытый доступ не даёт создать ещё экземпляр класса
         private Singleton() { }
 
+        /// <summary>
+        /// свойство через которое можно получить адрес экземпляра начальной формы (она только одна, аналогично классу в котором она создана)
+        /// </summary>
         public static StartForm StartForm
         {
 
             get
             {
-                if (startForm == null)
+                if (startForm == null)// если не существует такой формы (это происходит в начале работы, когда она ещё не создана) создаётся экземпляр этой формы
                 {
                     startForm = new StartForm();
                 }
-                return startForm;
+                return startForm;// возврат экземпляра
             }
         }
     }
