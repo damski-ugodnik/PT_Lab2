@@ -70,6 +70,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CubicEq_Button);
             this.Controls.Add(this.SquareEq_Button);
+            this.Location = new System.Drawing.Point(200, 100);
             this.Name = "StartForm";
             this.Text = "StartForm";
             this.Load += new System.EventHandler(this.StartForm_Load);
