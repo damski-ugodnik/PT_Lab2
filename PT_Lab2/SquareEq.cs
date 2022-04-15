@@ -117,8 +117,8 @@ namespace PT_Lab2
                     return;
                 }
                 // вывод в поля для корней результата где Х1,2 = ((-b) +- Math.Sqrt(discriminant)) / 2 * a
-                x1Box.Text = (Math.Round(((-b) - Math.Sqrt(discriminant)) / 2 * a, 3)).ToString();
-                x2Box.Text = (Math.Round(((-b) + Math.Sqrt(discriminant)) / 2 * a, 3)).ToString();
+                x1Box.Text = (Math.Round(((-b) - Math.Sqrt(discriminant)) / (2 * a), 3)).ToString();
+                x2Box.Text = (Math.Round(((-b) + Math.Sqrt(discriminant)) / (2 * a), 3)).ToString();
             }
             // если выбран второй режим, то вычисление производится в методе класса формы
             if (mode2.Checked)
@@ -194,8 +194,8 @@ namespace PT_Lab2
                     "discriminant less than zero");
             }
             // вычисление корней
-            double x1 = Math.Round(((-b) - Math.Sqrt(discriminant)) / 2 * a, 3);
-            double x2 = Math.Round(((-b) + Math.Sqrt(discriminant)) / 2 * a, 3);
+            double x1 = Math.Round(((-b) - Math.Sqrt(discriminant)) / (2 * a), 3);
+            double x2 = Math.Round(((-b) + Math.Sqrt(discriminant)) / (2 * a), 3);
             return new double[] { x1, x2 };
         }
         /// <summary>

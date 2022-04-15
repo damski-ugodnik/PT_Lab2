@@ -3,7 +3,7 @@
     /// <summary>
     /// Класс квадратного уравнения, отображает само уравнение с коэффициентами и корнями
     /// </summary>
-    internal class SquareEquation
+    public class SquareEquation
     {
         /// <summary>
         /// Поля уравнения, инициализируемые в конструкторе
@@ -31,8 +31,8 @@
                     "discriminant less than zero");
             }
             // вычисление корней
-            x1 = Math.Round(((-b) - Math.Sqrt(discriminant)) / 2 * a, 3);
-            x2 = Math.Round(((-b) + Math.Sqrt(discriminant)) / 2 * a, 3);
+            x1 = Math.Round(((-b) - Math.Sqrt(discriminant)) / (2 * a), 3);
+            x2 = Math.Round(((-b) + Math.Sqrt(discriminant)) / (2 * a), 3);
         }
 
         /// <summary>

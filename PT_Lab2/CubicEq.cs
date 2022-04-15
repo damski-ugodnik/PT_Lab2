@@ -198,10 +198,10 @@ namespace PT_Lab2
                 S = Math.Pow(Q, 3) - Math.Pow(R, 2);
                 if (S > 0)// если S > 0 то у уравнения 3 действительных корня
                 {
-                    double fi = Math.Acos(R / Math.Sqrt(-Math.Pow(Q, 3))) / 3;
-                    x1 = 2 * Math.Sqrt(-Q) * Math.Cos(fi) - A / 3;
-                    x2r = 2 * Math.Sqrt(-Q) * Math.Cos(fi + (2 * Math.PI) / 3) - A / 3;
-                    x3r = 2 * Math.Sqrt(-Q) * Math.Cos(fi - (2 * Math.PI) / 3) - A / 3;
+                    double fi = Math.Acos(R / Math.Sqrt(Math.Pow(Q, 3))) / 3;
+                    x1 = -2 * Math.Sqrt(Q) * Math.Cos(fi) - A / 3;
+                    x2r = -2 * Math.Sqrt(Q) * Math.Cos(fi + (2 * Math.PI) / 3) - A / 3;
+                    x3r = -2 * Math.Sqrt(Q) * Math.Cos(fi - (2 * Math.PI) / 3) - A / 3;
                     x1Box.Text = x1.ToString("0.000;-0.000;0");
                     x2Box.Text = x2r.ToString("0.000;-0.000;0");
                     x3Box.Text = x3r.ToString("0.000;-0.000;0");
@@ -309,10 +309,10 @@ namespace PT_Lab2
             S = Math.Pow(Q, 3) - Math.Pow(R, 2);
             if (S > 0)// если S > 0 то у уравнения 3 действительных корня
             {
-                double fi = Math.Acos(R / Math.Sqrt(-Math.Pow(Q, 3))) / 3;
-                x1 = 2 * Math.Sqrt(-Q) * Math.Cos(fi) - a / 3;
-                x2r = 2 * Math.Sqrt(-Q) * Math.Cos(fi + (2 * Math.PI) / 3) - a / 3;
-                x3r = 2 * Math.Sqrt(-Q) * Math.Cos(fi - (2 * Math.PI) / 3) - a / 3;
+                double fi = Math.Acos(R / Math.Sqrt(Math.Pow(Q, 3))) / 3;
+                x1 = -2 * Math.Sqrt(Q) * Math.Cos(fi) - a / 3;
+                x2r = -2 * Math.Sqrt(Q) * Math.Cos(fi + (2 * Math.PI) / 3) - a / 3;
+                x3r = -2 * Math.Sqrt(Q) * Math.Cos(fi - (2 * Math.PI) / 3) - a / 3;
                 return new string[] { x1.ToString("0.000;-0.000;0"), x2r.ToString("0.000;-0.000;0"), x3r.ToString("0.000;-0.000;0") };
             }
             if (S < 0)// если S < 0, то у уравнения один реальный корень и два комплексных

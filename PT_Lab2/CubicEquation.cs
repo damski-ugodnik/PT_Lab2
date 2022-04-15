@@ -2,7 +2,7 @@
 
 namespace PT_Lab2
 {
-    internal class CubicEquation
+    public class CubicEquation
     {
         // Уравнение имеет вид x^3 + ax^2 + bx + c = 0
         // Если первый коэффициент не равен 1, все коэффициенты разделяются на первый,
@@ -33,10 +33,10 @@ namespace PT_Lab2
             S = Math.Pow(Q, 3) - Math.Pow(R, 2);
             if (S > 0)// если S > 0 то у уравнения 3 действительных корня
             {
-                double fi = Math.Acos(R / Math.Sqrt(-Math.Pow(Q, 3))) / 3;
-                x1 = 2 * Math.Sqrt(-Q) * Math.Cos(fi) - a / 3;
-                x2r = 2 * Math.Sqrt(-Q) * Math.Cos(fi + (2 * Math.PI) / 3) - a / 3;
-                x3r = 2 * Math.Sqrt(-Q) * Math.Cos(fi - (2 * Math.PI) / 3) - a / 3;
+                double fi = Math.Acos(R / Math.Sqrt(Math.Pow(Q, 3))) / 3;
+                x1 = -2 * Math.Sqrt(Q) * Math.Cos(fi) - a / 3;
+                x2r = -2 * Math.Sqrt(Q) * Math.Cos(fi + (2 * Math.PI) / 3) - a / 3;
+                x3r = -2 * Math.Sqrt(Q) * Math.Cos(fi - (2 * Math.PI) / 3) - a / 3;
             }
             else if (S < 0)// если S < 0, то у уравнения один реальный корень и два комплексных
             {
