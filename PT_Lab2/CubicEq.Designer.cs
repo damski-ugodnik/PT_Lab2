@@ -338,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(801, 390);
             this.Controls.Add(this.gotoSquareEq);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
